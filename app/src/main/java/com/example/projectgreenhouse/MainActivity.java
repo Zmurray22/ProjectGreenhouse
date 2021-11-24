@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     //Drawer Menu variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
@@ -37,51 +36,56 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //back arrow
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            //onClick() listeners
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if(item.getItemId() == R.id.nav_home){
-                    //TODO: add intent
                     Log.i("DRAWER_NAV_TAG", "Home");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_inventory){
-                    //TODO: add intent
+                    Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Inventory");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_map){
-                    //TODO: add intent
+                    Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Maps");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_id){
-                    //TODO: add intent
+                    Intent intent = new Intent(MainActivity.this, IdActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Identify");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_social){
-                    //TODO: add intent
+                    Intent intent = new Intent(MainActivity.this, SocialActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Social");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_share){
-                    //TODO: add intent
+                    //TODO: Functionality
                     Log.i("DRAWER_NAV_TAG", "Share");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_settings){
-                    //TODO: add intent
+                    Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Settings");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_about){
-                    //TODO: add intent
+                    Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "About");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_exit){
-                    //TODO: add intent
                     Log.i("DRAWER_NAV_TAG", "Exit");
                     drawerLayout.closeDrawer(GravityCompat.START);
                     finish();
@@ -99,4 +103,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

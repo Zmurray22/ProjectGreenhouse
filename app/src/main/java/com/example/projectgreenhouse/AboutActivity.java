@@ -15,19 +15,19 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
 
-public class InventoryActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
     //Drawer Menu variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory);
+        setContentView(R.layout.activity_about);
 
         //Drawer navigation
-        drawerLayout = findViewById(R.id.drawer_layout_inventory);
+        drawerLayout = findViewById(R.id.drawer_layout_main);
         navigationView = findViewById(R.id.drawer_navigationView);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open, R.string.menu_close);
         //adds toggle bar to the drawer layout and sync the state of the action
@@ -41,29 +41,31 @@ public class InventoryActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if(item.getItemId() == R.id.nav_home){
+                    Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Home");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_inventory){
-                    Intent intent = new Intent(InventoryActivity.this, InventoryActivity.class);
+                    Intent intent = new Intent(AboutActivity.this, InventoryActivity.class);
                     startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Inventory");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_map){
-                    Intent intent = new Intent(InventoryActivity.this, MapsActivity.class);
+                    Intent intent = new Intent(AboutActivity.this, MapsActivity.class);
                     startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Maps");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_id){
-                    Intent intent = new Intent(InventoryActivity.this, IdActivity.class);
+                    Intent intent = new Intent(AboutActivity.this, IdActivity.class);
                     startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Identify");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_social){
-                    Intent intent = new Intent(InventoryActivity.this, SocialActivity.class);
+                    Intent intent = new Intent(AboutActivity.this, SocialActivity.class);
                     startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Social");
                     drawerLayout.closeDrawer(GravityCompat.START);
@@ -74,14 +76,12 @@ public class InventoryActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_settings){
-                    Intent intent = new Intent(InventoryActivity.this, SettingsActivity.class);
+                    Intent intent = new Intent(AboutActivity.this, SettingsActivity.class);
                     startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Settings");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_about){
-                    Intent intent = new Intent(InventoryActivity.this, AboutActivity.class);
-                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "About");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -94,6 +94,7 @@ public class InventoryActivity extends AppCompatActivity {
                 return true;
             }
         });
+        
     }
 
     //Drawer Menu
