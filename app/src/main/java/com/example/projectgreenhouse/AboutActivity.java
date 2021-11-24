@@ -35,64 +35,61 @@ public class AboutActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //back arrow
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            //Nav drawer intents
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        //Nav drawer intents
+        navigationView.setNavigationItemSelectedListener(item -> {
 
-                if(item.getItemId() == R.id.nav_home){
-                    Intent intent = new Intent(AboutActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    Log.i("DRAWER_NAV_TAG", "Home");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            if(item.getItemId() == R.id.nav_home){
+                Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                startActivity(intent);
+                Log.i(getString(R.string.nav_log), getString(R.string.home));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_inventory){
-                    Intent intent = new Intent(AboutActivity.this, InventoryActivity.class);
-                    startActivity(intent);
-                    Log.i("DRAWER_NAV_TAG", "Inventory");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_inventory){
+                Intent intent = new Intent(AboutActivity.this, InventoryActivity.class);
+                startActivity(intent);
+                Log.i(getString(R.string.nav_log), getString(R.string.inventory));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_map){
-                    Intent intent = new Intent(AboutActivity.this, MapsActivity.class);
-                    startActivity(intent);
-                    Log.i("DRAWER_NAV_TAG", "Maps");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_map){
+                Intent intent = new Intent(AboutActivity.this, MapsActivity.class);
+                startActivity(intent);
+                Log.i(getString(R.string.nav_log), getString(R.string.maps));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_id){
-                    Intent intent = new Intent(AboutActivity.this, IdActivity.class);
-                    startActivity(intent);
-                    Log.i("DRAWER_NAV_TAG", "Identify");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_id){
+                Intent intent = new Intent(AboutActivity.this, IdActivity.class);
+                startActivity(intent);
+                Log.i(getString(R.string.nav_log), getString(R.string.id));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_social){
-                    Intent intent = new Intent(AboutActivity.this, SocialActivity.class);
-                    startActivity(intent);
-                    Log.i("DRAWER_NAV_TAG", "Social");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_social){
+                Intent intent = new Intent(AboutActivity.this, SocialActivity.class);
+                startActivity(intent);
+                Log.i(getString(R.string.nav_log), getString(R.string.social));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_share){
-                    //TODO: Functionality
-                    Log.i("DRAWER_NAV_TAG", "Share");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_share){
+                //TODO: Functionality
+                Log.i(getString(R.string.nav_log), getString(R.string.share));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_settings){
-                    Intent intent = new Intent(AboutActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                    Log.i("DRAWER_NAV_TAG", "Settings");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_settings){
+                Intent intent = new Intent(AboutActivity.this, SettingsActivity.class);
+                startActivity(intent);
+                Log.i(getString(R.string.nav_log), getString(R.string.settings));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_about){
-                    Log.i("DRAWER_NAV_TAG", "About");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+            }else if(item.getItemId() == R.id.nav_about){
+                Log.i(getString(R.string.nav_log), getString(R.string.about));
+                drawerLayout.closeDrawer(GravityCompat.START);
 
-                }else if(item.getItemId() == R.id.nav_exit){
-                    Log.i("DRAWER_NAV_TAG", "Exit");
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                    finishAffinity();
-                }
-
-                return true;
+            }else if(item.getItemId() == R.id.nav_exit){
+                Log.i(getString(R.string.nav_log), getString(R.string.exit));
+                drawerLayout.closeDrawer(GravityCompat.START);
+                finishAffinity();
             }
+
+            return true;
         });
         
     }

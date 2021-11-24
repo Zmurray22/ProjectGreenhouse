@@ -2,4 +2,14 @@
     <string name="app_name">ProjectGreenhouse</string>
     <string name="menu_open">Open</string>
     <string name="menu_close">Close</string>
+    <string name="nav_log">DRAWER_NAV_TAG</string>
+    <string name="home">Home</string>
+    <string name="inventory">Inventory</string>
+    <string name="maps">Maps</string>
+    <string name="id">Identify</string>
+    <string name="social">Social</string>
+    <string name="share">Share</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
 </resources>
