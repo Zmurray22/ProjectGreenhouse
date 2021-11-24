@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/drawer_icon_home" />
+
+        <item
+            android:id="@+id/nav_inventory"
+            android:title="Inventory"
+            android:icon="@drawable/drawer_icon_inventory" />
+
+        <item
+            android:id="@+id/nav_map"
+            android:title="Maps"
+            android:icon="@drawable/drawer_icon_map" />
+
+        <item
+            android:id="@+id/nav_id"
+            android:title="Identify"
+            android:icon="@drawable/drawer_icon_id" />
+
+    </group>
+    <!--Submenu for social activities-->
+    <group android:checkableBehavior="single">
+        <item android:title="Community">
+            <menu>
+                   <group>
+                        <item
+                            android:id="@+id/nav_social"
+                            android:title="Social"
+                            android:icon="@drawable/drawer_icon_social" />
+
+                        <item
+                            android:id="@+id/nav_share"
+                            android:title="Share"
+                            android:icon="@drawable/drawer_icon_share" />
+
+                   </group>
+            </menu>
+        </item>
+    </group>
+
+    <!--Submenu for other-->
+    <group android:checkableBehavior="single">
+        <item android:title="Other">
+            <menu>
+                <group>
+
+                    <item
+                        android:id="@+id/nav_settings"
+                        android:title="Settings"
+                        android:icon="@drawable/drawer_icon_settings" />
+
+                    <item
+                        android:id="@+id/nav_about"
+                        android:title="About"
+                        android:icon="@drawable/drawer_icon_about" />
+
+                    <item
+                        android:id="@+id/nav_exit"
+                        android:title="Exit"
+                        android:icon="@drawable/drawer_icon_exit" />
+
+                </group>
+            </menu>
+        </item>
+    </group>
+
+</menu>
