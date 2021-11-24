@@ -88,7 +88,7 @@ public class InventoryActivity extends AppCompatActivity {
                 }else if(item.getItemId() == R.id.nav_exit){
                     Log.i("DRAWER_NAV_TAG", "Exit");
                     drawerLayout.closeDrawer(GravityCompat.START);
-                    finish();
+                    finishAffinity();
                 }
 
                 return true;
