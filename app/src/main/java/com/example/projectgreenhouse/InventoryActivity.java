@@ -36,17 +36,17 @@ public class InventoryActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //back arrow
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            //onClick() listeners
+            //Nav drawer intents
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if(item.getItemId() == R.id.nav_home){
+                    Intent intent = new Intent(InventoryActivity.this, MainActivity.class);
+                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Home");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
                 }else if(item.getItemId() == R.id.nav_inventory){
-                    Intent intent = new Intent(InventoryActivity.this, InventoryActivity.class);
-                    startActivity(intent);
                     Log.i("DRAWER_NAV_TAG", "Inventory");
                     drawerLayout.closeDrawer(GravityCompat.START);
 

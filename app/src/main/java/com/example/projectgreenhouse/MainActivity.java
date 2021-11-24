@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //back arrow
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            //onClick() listeners
+            //Nav drawer intents
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

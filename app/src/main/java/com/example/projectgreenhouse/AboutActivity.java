@@ -27,7 +27,7 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         //Drawer navigation
-        drawerLayout = findViewById(R.id.drawer_layout_main);
+        drawerLayout = findViewById(R.id.drawer_layout_about);
         navigationView = findViewById(R.id.drawer_navigationView);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open, R.string.menu_close);
         //adds toggle bar to the drawer layout and sync the state of the action
@@ -36,7 +36,7 @@ public class AboutActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //back arrow
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            //onClick() listeners
+            //Nav drawer intents
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
