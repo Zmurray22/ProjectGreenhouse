@@ -13,13 +13,18 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class InventoryActivity extends AppCompatActivity {
+
     //Drawer Menu variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
+
+    //Arraylist of list items
+    private final ArrayList<String> plantList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,8 +94,14 @@ public class InventoryActivity extends AppCompatActivity {
                 finishAffinity();
             }
 
+
             return true;
         });
+
+        //Populate item arraylist
+        for(int i = 0; i < 20; i++){
+            plantList.add("Plant " + i);
+        }
     }
 
     //Drawer Menu
