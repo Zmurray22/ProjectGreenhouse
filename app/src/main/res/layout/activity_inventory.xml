@@ -18,14 +18,34 @@
             android:layout_width="match_parent"
             android:layout_height="62dp"
             app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white"
             tools:layout_editor_absoluteX="1dp" >
 
-            <ImageView
-                android:id="@+id/addPlant"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_delete" />
+
+            <ImageButton
+                android:id="@+id/addButton"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="end"
+                android:scaleType="centerCrop"
                 android:src="@drawable/icon_add" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:inputType="textFilter"
+                android:text="Search..." />
         </com.google.android.material.navigation.NavigationView>
 <!--TODO: Convert to recyclerView and establish storage system for items-->
         <androidx.recyclerview.widget.RecyclerView

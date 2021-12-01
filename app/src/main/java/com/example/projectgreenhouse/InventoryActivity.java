@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,6 +32,7 @@ public class InventoryActivity extends AppCompatActivity {
     //Variables for RecyclerView
     private RecyclerView mRecyclerView;
     private PlantListAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,13 +100,43 @@ public class InventoryActivity extends AppCompatActivity {
                 drawerLayout.closeDrawer(GravityCompat.START);
                 finishAffinity();
             }
-
-
             return true;
         });
 
+        //Top nav buttons
+        //Add a new item button
+        ImageButton addItem = findViewById(R.id.addButton);
+        addItem.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                int listSize = mPlantList.size();
+                //add new item
+                mPlantList.addLast(" + Plant" + listSize);
+                //notify adapter of change
+                mRecyclerView.getAdapter().notifyItemInserted(listSize);
+                //scroll to bottom
+                mRecyclerView.smoothScrollToPosition(listSize);
+            }
+        });
+
+        //Delete an item
+        ImageButton deleteItem = findViewById(R.id.deleteButton);
+        deleteItem.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                int listSize = mPlantList.size();
+                //delete item
+                if(listSize != 0)
+                    mPlantList.removeLast();
+                //notify adapter of change
+                mRecyclerView.getAdapter().notifyItemRemoved(listSize);
+                //scroll to bottom
+                mRecyclerView.smoothScrollToPosition(listSize);
+            }
+        });
+
         //Populate item arraylist
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < 5; i++){
             mPlantList.add("Plant " + i);
         }
 
