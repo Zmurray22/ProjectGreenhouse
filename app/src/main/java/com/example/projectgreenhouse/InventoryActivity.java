@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -27,7 +28,7 @@ public class InventoryActivity extends AppCompatActivity {
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
-    //Arraylist of list items
+    //Linkedlist of list items
     private final LinkedList<String> mPlantList = new LinkedList<>();
     //Variables for RecyclerView
     private RecyclerView mRecyclerView;
@@ -113,7 +114,11 @@ public class InventoryActivity extends AppCompatActivity {
                 //add new item
                 mPlantList.addLast(" + Plant" + listSize);
                 //notify adapter of change
-                mRecyclerView.getAdapter().notifyItemInserted(listSize);
+                try{
+                    Objects.requireNonNull(mRecyclerView.getAdapter()).notifyItemInserted(listSize);
+                }catch(NullPointerException e){
+                    Toast.makeText(getApplicationContext(), "Insertion error", Toast.LENGTH_SHORT).show();
+                }
                 //scroll to bottom
                 mRecyclerView.smoothScrollToPosition(listSize);
             }
@@ -129,7 +134,11 @@ public class InventoryActivity extends AppCompatActivity {
                 if(listSize != 0)
                     mPlantList.removeLast();
                 //notify adapter of change
-                mRecyclerView.getAdapter().notifyItemRemoved(listSize);
+                try{
+                    Objects.requireNonNull(mRecyclerView.getAdapter()).notifyItemRemoved(listSize);
+                }catch(NullPointerException e){
+                Toast.makeText(getApplicationContext(), "Removal error", Toast.LENGTH_SHORT).show();
+            }
                 //scroll to bottom
                 mRecyclerView.smoothScrollToPosition(listSize);
             }
