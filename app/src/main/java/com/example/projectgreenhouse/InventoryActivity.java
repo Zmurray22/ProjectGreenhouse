@@ -5,6 +5,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +15,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Objects;
 
 public class InventoryActivity extends AppCompatActivity {
@@ -24,8 +26,10 @@ public class InventoryActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
 
     //Arraylist of list items
-    private final ArrayList<String> plantList = new ArrayList<>();
-
+    private final LinkedList<String> mPlantList = new LinkedList<>();
+    //Variables for RecyclerView
+    private RecyclerView mRecyclerView;
+    private PlantListAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,8 +104,17 @@ public class InventoryActivity extends AppCompatActivity {
 
         //Populate item arraylist
         for(int i = 0; i < 20; i++){
-            plantList.add("Plant " + i);
+            mPlantList.add("Plant " + i);
         }
+
+        //Get a handle to RecyclerView
+        mRecyclerView = findViewById(R.id.inventory_recyclerView);
+        //create adapter and supply the data to display
+        mAdapter = new PlantListAdapter(this, mPlantList);
+        //connect adapter with RecyclerView
+        mRecyclerView.setAdapter(mAdapter);
+        //give RecyclerView a default layout manager
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     //Drawer Menu
