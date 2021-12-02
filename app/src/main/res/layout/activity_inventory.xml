@@ -47,7 +47,7 @@
                 android:inputType="textFilter"
                 android:text="Search..." />
         </com.google.android.material.navigation.NavigationView>
-<!--TODO: Convert to recyclerView and establish storage system for items-->
+<!--TODO: establish storage system for items-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/inventory_recyclerView"
             android:layout_width="match_parent"

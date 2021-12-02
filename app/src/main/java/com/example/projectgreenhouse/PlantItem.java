@@ -1,17 +1,50 @@
 package com.example.projectgreenhouse;
 
-import android.graphics.Bitmap;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+/*Table (Example)
+                                    plant_item
+________________________________________________________________________________________
+|plant_id|nickname|species_name|profile_pic|freeze  |heart   |storm   |toxic   |water   |
+|1       |Rose    |R. damascena|filePath   |filePath|filePath|filePath|filePath|filePath|
+ */
+
+@Entity(tableName = "plant_item")
 public class PlantItem {
-
+    //Table name constructor
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name="plant_id")
+    private Integer plant_id;
+    public PlantItem(@NonNull Integer plant) {this.plant_id = plant;}
+    public Integer getPlant(){return this.plant_id;}
+    //Entity values
     private String nickname;
     private String species_name;
-    private Bitmap profile_pic;
-    private Bitmap freeze, heart, storm, toxic, water;
+    private String profile_pic;
+    private String freeze, heart, storm, toxic, water;
 
-    public PlantItem(String nickname, String species_name) {
+    public PlantItem(@NonNull Integer plant_id, String nickname, String species_name, String profile_pic, String freeze, String heart, String storm, String toxic, String water) {
+        this.plant_id = plant_id;
         this.nickname = nickname;
         this.species_name = species_name;
+        this.profile_pic = profile_pic;
+        this.freeze = freeze;
+        this.heart = heart;
+        this.storm = storm;
+        this.toxic = toxic;
+        this.water = water;
+    }
+
+    public int getPlantId() {
+        return plant_id;
+    }
+
+    public void setPlantId(Integer plant_id) {
+        this.plant_id = plant_id;
     }
 
     public String getNickname() {
@@ -30,51 +63,51 @@ public class PlantItem {
         this.species_name = species_name;
     }
     //Image methods
-    public Bitmap getProfile_pic() {
+    public String getProfile_pic() {
         return profile_pic;
     }
 
-    public void setProfile_pic(Bitmap profile_pic) {
+    public void setProfile_pic(String profile_pic) {
         this.profile_pic = profile_pic;
     }
 
-    public Bitmap getFreeze() {
+    public String getFreeze() {
         return freeze;
     }
 
-    public void setFreeze(Bitmap freeze) {
+    public void setFreeze(String freeze) {
         this.freeze = freeze;
     }
 
-    public Bitmap getHeart() {
+    public String getHeart() {
         return heart;
     }
 
-    public void setHeart(Bitmap heart) {
+    public void setHeart(String heart) {
         this.heart = heart;
     }
 
-    public Bitmap getStorm() {
+    public String getStorm() {
         return storm;
     }
 
-    public void setStorm(Bitmap storm) {
+    public void setStorm(String storm) {
         this.storm = storm;
     }
 
-    public Bitmap getToxic() {
+    public String getToxic() {
         return toxic;
     }
 
-    public void setToxic(Bitmap toxic) {
+    public void setToxic(String toxic) {
         this.toxic = toxic;
     }
 
-    public Bitmap getWater() {
+    public String getWater() {
         return water;
     }
 
-    public void setWater(Bitmap water) {
+    public void setWater(String water) {
         this.water = water;
     }
 }
