@@ -7,20 +7,20 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {PlantItem.class}, version = 1, exportSchema = false)
-public abstract class PlantRoomDatabase extends RoomDatabase {
+public abstract class GreenhouseDatabase extends RoomDatabase {
 
     public abstract  PlantDao plantDao();
 
-    private static PlantRoomDatabase INSTANCE;
+    private static GreenhouseDatabase INSTANCE;
 
-    public static PlantRoomDatabase getDatabase(final Context context){
+    public static GreenhouseDatabase getDatabase(final Context context){
         if (INSTANCE == null){
-            synchronized (PlantRoomDatabase.class){
+            synchronized (GreenhouseDatabase.class){
                 if (INSTANCE == null){
                     //TODO: Create database
                         //Drop and rebuild if no migration implemented
                         // TODO: Migration strategy
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), PlantRoomDatabase.class, "greenhouse_database").fallbackToDestructiveMigration().build();
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), GreenhouseDatabase.class, "greenhouse_database").fallbackToDestructiveMigration().build();
                 }
             }
         }
