@@ -11,10 +11,10 @@ import com.example.projectgreenhouse.db.PlantItem;
 import java.util.List;
 
 public class GreenhouseViewModel extends AndroidViewModel {
+    private static LiveData<List<PlantItem>> mAllPlants;
     //Reference to repository
     private GreenhouseRepository mRepository;
-    //cache the list
-    private LiveData<List<PlantItem>> mAllPlants;
+
     //Constructor
     public GreenhouseViewModel (Application application){
         super(application);
@@ -22,9 +22,11 @@ public class GreenhouseViewModel extends AndroidViewModel {
         mAllPlants = mRepository.getAllPlants();
     }
 
-    LiveData<List<PlantItem>> getAllPlants() {return mAllPlants;}
+    public static LiveData<List<PlantItem>> getAllPlants() {
+        return mAllPlants;
+    }
 
-    //wrapper to called repository insert() method
+    //wrapper to call repository insert() method
     public void insert(PlantItem item) {mRepository.insert(item);}
 
 }

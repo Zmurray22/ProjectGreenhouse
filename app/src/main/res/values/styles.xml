@@ -9,4 +9,7 @@
         <item name="android:scaleY">.8</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
+
+
+
 </resources>
