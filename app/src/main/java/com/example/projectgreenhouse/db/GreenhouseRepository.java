@@ -12,13 +12,13 @@ public class GreenhouseRepository {
     private LiveData<List<PlantItem>> mAllPlants;
 
     //Constructor
-    GreenhouseRepository(Application application){
+    public GreenhouseRepository(Application application){
         GreenhouseDatabase db = GreenhouseDatabase.getDatabase(application);
         mPlantDao = db.plantDao();
         mAllPlants = mPlantDao.getAllPlants();
     }
     //Return cached data as LiveData
-    LiveData<List<PlantItem>> getAllPlants(){
+    public LiveData<List<PlantItem>> getAllPlants(){
         return mAllPlants;
     }
     //Wrapper to call insert on new thread
