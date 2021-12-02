@@ -25,7 +25,7 @@
             android:name=".MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".InventoryActivity"
+            android:name=".inv.InventoryActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

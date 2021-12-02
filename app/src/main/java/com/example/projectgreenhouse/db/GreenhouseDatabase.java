@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.db;
 
 import android.content.Context;
 
@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 @Database(entities = {PlantItem.class}, version = 1, exportSchema = false)
 public abstract class GreenhouseDatabase extends RoomDatabase {
 
-    public abstract  PlantDao plantDao();
+    public abstract PlantDao plantDao();
 
     private static GreenhouseDatabase INSTANCE;
 

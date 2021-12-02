@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.projectgreenhouse.inv.InventoryActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;

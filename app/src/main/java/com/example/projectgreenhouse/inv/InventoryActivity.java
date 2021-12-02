@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.inv;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,6 +16,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.projectgreenhouse.AboutActivity;
+import com.example.projectgreenhouse.IdActivity;
+import com.example.projectgreenhouse.MainActivity;
+import com.example.projectgreenhouse.MapsActivity;
+import com.example.projectgreenhouse.R;
+import com.example.projectgreenhouse.SettingsActivity;
+import com.example.projectgreenhouse.SocialActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.LinkedList;

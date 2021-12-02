@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.db;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

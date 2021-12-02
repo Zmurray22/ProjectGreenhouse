@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.db;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -25,5 +25,5 @@ public interface PlantDao {
     void deleteAlL();
 
     @Query("SELECT * from plant_item ORDER BY plant_id ASC")
-    LiveData<List<PlantItem>> getAllWords();
+    LiveData<List<PlantItem>> getAllPlants();
 }
