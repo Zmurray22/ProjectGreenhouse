@@ -13,17 +13,17 @@ import java.util.List;
 public interface PlantDao {
 
     @Insert
-    void insert(PlantItem item);
+    void insert(Plant plant);
 
     @Delete
-    void delete(PlantItem item);
+    void delete(Plant plant);
 
     @Update
-    void update(PlantItem item);
+    void update(Plant plant);
 
-    @Query("DELETE FROM plant_item")
-    void deleteAlL();
+    @Query("DELETE FROM plant_table")
+    void deleteAlLPlants();
 
-    @Query("SELECT * from plant_item ORDER BY nickname ASC")
-    LiveData<List<PlantItem>> getAllPlants();
+    @Query("SELECT * from plant_table ORDER BY id ASC")
+    LiveData<List<Plant>> getAllPlants();
 }

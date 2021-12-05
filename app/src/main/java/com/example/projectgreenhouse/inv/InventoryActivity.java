@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,14 +24,14 @@ import com.example.projectgreenhouse.AboutActivity;
 import com.example.projectgreenhouse.IdActivity;
 import com.example.projectgreenhouse.MainActivity;
 import com.example.projectgreenhouse.MapsActivity;
+import com.example.projectgreenhouse.PlantProfileActivity;
 import com.example.projectgreenhouse.R;
 import com.example.projectgreenhouse.SettingsActivity;
 import com.example.projectgreenhouse.SocialActivity;
-import com.example.projectgreenhouse.db.PlantItem;
+import com.example.projectgreenhouse.db.Plant;
 import com.example.projectgreenhouse.viewmodel.GreenhouseViewModel;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,7 +42,7 @@ public class InventoryActivity extends AppCompatActivity {
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
     //DB
-    private GreenhouseViewModel mGreenhouseViewModel;
+    private GreenhouseViewModel greenhouseViewModel;
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
@@ -114,55 +115,63 @@ public class InventoryActivity extends AppCompatActivity {
             return true;
         });
 
-        //RecyclerView Block----------------------
-        RecyclerView recyclerView = findViewById(R.id.inventory_recyclerView);
-        final PlantListAdapter adapter = new PlantListAdapter(this);
-        //connect adapter with RecyclerView
-        recyclerView.setAdapter(adapter);
-        //give RecyclerView a default layout manager
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //ViewModel-------------------------
-        mGreenhouseViewModel = new ViewModelProvider(this).get(GreenhouseViewModel.class);
-        GreenhouseViewModel.getAllPlants().observe(this, new Observer<List<PlantItem>>() {
-            @Override
-            public void onChanged(@Nullable final List<PlantItem> plantItems) {
-                //update cache
-                adapter.setItems(plantItems);
-            }
-        });
-
         //Top nav buttons-------------------------
         //Add a new item button
         ImageButton addItem = findViewById(R.id.addButton);
         addItem.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(InventoryActivity.this, AddPlantActivity.class);
                 //TODO: Refactor to androidx activity result implementation
                 startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
             }
         });
 
-        /*//Delete an item
-        ImageButton deleteItem = findViewById(R.id.deleteButton);
-        deleteItem.setOnClickListener(new View.OnClickListener(){
+
+        //RecyclerView Block----------------------
+        //Find recyclerView in the layout
+        RecyclerView recyclerView = findViewById(R.id.inventory_recyclerView);
+        //give RecyclerView a default layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+        //Create adapter to pass data to
+        //connect adapter with RecyclerView
+        final PlantAdapter adapter = new PlantAdapter();
+        recyclerView.setAdapter(adapter);
+
+        //ViewModel-------------------------
+        greenhouseViewModel = new ViewModelProvider(this).get(GreenhouseViewModel.class);
+        greenhouseViewModel.getAllPlants().observe(this, new Observer<List<Plant>>() {
             @Override
-            public void onClick(View view) {
-                int listSize = mPlantList.size();
-                //delete item
-                if(listSize != 0)
-                    mPlantList.removeLast();
-                //notify adapter of change
-                try{
-                    Objects.requireNonNull(recyclerView.getAdapter()).notifyItemRemoved(listSize);
-                }catch(NullPointerException e){
-                Toast.makeText(getApplicationContext(), "Removal error", Toast.LENGTH_SHORT).show();
+            public void onChanged(@Nullable List<Plant> plants) {
+                //update cache
+                adapter.setPlants(plants);
             }
-                //scroll to bottom
-                recyclerView.smoothScrollToPosition(listSize);
+        });
+        //Go to selected plant profile-------------------------
+        adapter.setOnItemClickListener(new PlantAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Plant plant) {
+                Intent intent = new Intent(InventoryActivity.this, PlantProfileActivity.class);
+                intent.putExtra("newNickname", plant.getNickname());
+                startActivity(intent);
             }
-        });*/
+        });
+
+        //Swipe to delete----------------------------------
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                greenhouseViewModel.delete(adapter.getPlantAt(viewHolder.getAdapterPosition()));
+                Toast.makeText(InventoryActivity.this, "Plant deleted", Toast.LENGTH_SHORT).show();
+            }
+        }).attachToRecyclerView(recyclerView);
 
     }
 
@@ -175,13 +184,13 @@ public class InventoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // ------------------------------------
+    // Add Item ----------------------
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
-            PlantItem item = new PlantItem(data.getStringExtra(AddPlantActivity.EXTRA_REPLY));
-            mGreenhouseViewModel.insert(item);
+            Plant plant = new Plant(data.getStringExtra(AddPlantActivity.EXTRA_REPLY));
+            greenhouseViewModel.insert(plant);
         } else{
             Toast.makeText(getApplicationContext(), R.string.empty_not_saved, Toast.LENGTH_LONG).show();
         }

@@ -2,41 +2,93 @@ package com.example.projectgreenhouse.db;
 
 import android.app.Application;
 import android.os.AsyncTask;
-
 import androidx.lifecycle.LiveData;
+import androidx.loader.content.AsyncTaskLoader;
 
 import java.util.List;
 
 public class GreenhouseRepository {
-    private PlantDao mPlantDao;
-    private LiveData<List<PlantItem>> mAllPlants;
+    private PlantDao plantDao;
+    private LiveData<List<Plant>> allPlants;
 
-    //Constructor
-    public GreenhouseRepository(Application application){
-        GreenhouseDatabase db = GreenhouseDatabase.getDatabase(application);
-        mPlantDao = db.plantDao();
-        mAllPlants = mPlantDao.getAllPlants();
+    public GreenhouseRepository(Application application) {
+        GreenhouseDatabase database = GreenhouseDatabase.getInstance(application);
+        plantDao = database.plantDao();
+        allPlants = plantDao.getAllPlants();
     }
-    //Return cached data as LiveData
-    public LiveData<List<PlantItem>> getAllPlants(){
-        return mAllPlants;
-    }
-    //Wrapper to call insert on new thread
-    public void insert (PlantItem item){
-        new insertAsyncTask(mPlantDao).execute(item);
-    }
-    //Inner class
-    private static class insertAsyncTask extends AsyncTask<PlantItem, Void, Void> {
 
-        private PlantDao mAsyncTaskDao;
-        //TODO: Replace with non-depreciated alternative
-        insertAsyncTask(PlantDao dao){
-            mAsyncTaskDao = dao;
+    public void insert(Plant plant) {
+        new InsertPlantAsyncTask(plantDao).execute(plant);
+    }
+
+    public void update(Plant plant) {
+        new UpdatePlantAsyncTask(plantDao).execute(plant);
+    }
+
+    public void delete(Plant plant) {
+        new DeletePlantAsyncTask(plantDao).execute(plant);
+    }
+
+    public void deleteAllPlants() {
+        new DeleteAllPlantsAsyncTask(plantDao).execute();
+    }
+
+    public LiveData<List<Plant>> getAllPlants() {
+        return allPlants;
+    }
+
+    private static class InsertPlantAsyncTask extends AsyncTask<Plant, Void, Void> {
+        private PlantDao plantDao;
+
+        private InsertPlantAsyncTask(PlantDao plantDao) {
+            this.plantDao = plantDao;
         }
 
         @Override
-        protected Void doInBackground(final PlantItem... params){
-            mAsyncTaskDao.insert(params[0]);
+        protected Void doInBackground(Plant... plants) {
+            plantDao.insert(plants[0]);
+            return null;
+        }
+    }
+
+    private static class UpdatePlantAsyncTask extends AsyncTask<Plant, Void, Void> {
+        private PlantDao plantDao;
+
+        private UpdatePlantAsyncTask(PlantDao plantDao) {
+            this.plantDao = plantDao;
+        }
+
+        @Override
+        protected Void doInBackground(Plant... plants) {
+            plantDao.update(plants[0]);
+            return null;
+        }
+    }
+
+    private static class DeletePlantAsyncTask extends AsyncTask<Plant, Void, Void> {
+        private PlantDao plantDao;
+
+        private DeletePlantAsyncTask(PlantDao plantDao) {
+            this.plantDao = plantDao;
+        }
+
+        @Override
+        protected Void doInBackground(Plant... plants) {
+            plantDao.delete(plants[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteAllPlantsAsyncTask extends AsyncTask<Void, Void, Void> {
+        private PlantDao plantDao;
+
+        private DeleteAllPlantsAsyncTask(PlantDao plantDao) {
+            this.plantDao = plantDao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            plantDao.deleteAlLPlants();
             return null;
         }
     }

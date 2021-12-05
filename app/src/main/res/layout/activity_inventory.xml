@@ -22,17 +22,10 @@
             tools:layout_editor_absoluteX="1dp" >
 
             <ImageButton
-                android:id="@+id/deleteButton"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:scaleType="centerCrop"
-                android:src="@drawable/icon_delete" />
-
-            <ImageButton
                 android:id="@+id/addButton"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
+                android:background="@color/teal_700"
                 android:layout_gravity="end"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_add" />
@@ -56,7 +49,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintVertical_bias="1.0">
 
         </androidx.recyclerview.widget.RecyclerView>
 
