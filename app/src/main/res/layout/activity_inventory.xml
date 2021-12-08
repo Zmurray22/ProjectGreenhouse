@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout_inventory"
-    android:background="@drawable/background_bg3"
     tools:context=".inv.InventoryActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
