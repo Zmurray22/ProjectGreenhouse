@@ -1,6 +1,7 @@
 package com.example.projectgreenhouse;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.projectgreenhouse.inv.InventoryActivity;
+import com.example.projectgreenhouse.settings.SettingsActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Original-->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,36 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--Blue-->
+    <color name="picton_blue">#45B1E7</color>
+    <color name="crayola_sky">#76D7EA</color>
+    <color name="pale_blue">#AFEEEE</color>
+    <color name="crayola_green">#5EA777</color>
+    <color name="forest_green">#004C24</color>
+    <!--Classic-->
+    <color name="dark_green">#013221</color>
+    <color name="deep_moss">#335A44</color>
+    <color name="russian_green">#658267</color>
+    <color name="morning_green">#96AA8B</color>
+    <color name="pale_green">#C8D2AE</color>
+    <color name="light_goldenrod">#FAFAD1</color>
+    <!--Evergreen-->
+    <color name="grullo">#AF9585</color>
+    <color name="pastel_gray">#D9C9B9</color>
+    <color name="jetstream">#B6CDBD</color>
+    <color name="axolotl">#5C715E</color>
+    <!--chinese_white-->
+
+    <!--Orange-->
+    <color name="blue_green">#1697B7</color>
+    <color name="max_blue_green">#30C3CD</color>
+    <color name="antiflash_white">#F3F3F3</color>
+    <color name="midyellow_red">#F3AD78</color>
+    <color name="burnt_sienna">#E8804C</color>
+    <!--Pink-->
+    <color name="chinese_white">#E4F0DA</color>
+    <color name="tea_green">#C9E2CB</color>
+    <color name="sea_green">#91BC94</color>
+    <color name="baby_pink">#F4CAC8</color>
+    <color name="amaranth_pink">#FB9CB5</color>
 </resources>

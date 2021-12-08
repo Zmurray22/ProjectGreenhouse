@@ -26,7 +26,7 @@ import com.example.projectgreenhouse.MainActivity;
 import com.example.projectgreenhouse.MapsActivity;
 import com.example.projectgreenhouse.PlantProfileActivity;
 import com.example.projectgreenhouse.R;
-import com.example.projectgreenhouse.SettingsActivity;
+import com.example.projectgreenhouse.settings.SettingsActivity;
 import com.example.projectgreenhouse.SocialActivity;
 import com.example.projectgreenhouse.db.Plant;
 import com.example.projectgreenhouse.viewmodel.GreenhouseViewModel;

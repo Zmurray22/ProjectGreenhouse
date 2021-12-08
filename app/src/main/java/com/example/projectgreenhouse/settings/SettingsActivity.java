@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.Toast;
+
+import com.example.projectgreenhouse.MainActivity;
+import com.example.projectgreenhouse.R;
 
 public class SettingsActivity extends AppCompatActivity {
     //gesture variables
