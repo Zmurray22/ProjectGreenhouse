@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:textAlignment="viewStart">
             <!--Account _______________________ -->
@@ -72,7 +72,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
+                        android:layout_marginTop="10dp"
                         android:text="Blue"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
@@ -80,7 +80,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="21dp"
+                        android:layout_marginTop="24dp"
                         android:text="Classic"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
@@ -88,15 +88,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="21dp"
+                        android:layout_marginTop="24dp"
                         android:text="Evergreen"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
-                    \
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="21dp"
+                        android:layout_marginTop="24dp"
                         android:text="Orange"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
@@ -104,7 +104,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="21dp"
+                        android:layout_marginTop="24dp"
                         android:text="Pink"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
@@ -113,37 +113,37 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="240dp">
+                    android:layout_marginStart="225dp">
 
                     <RadioButton
                         android:id="@+id/blue_option"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/classic_option"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/evergreen_option"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/orange_option"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/pink_option"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -165,8 +165,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="40dp"
                 android:text="Updates"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
@@ -174,8 +175,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:text="Weather Warning"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
@@ -183,8 +185,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:text="Watering Times"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
@@ -192,8 +195,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:text="Reminders"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
@@ -201,8 +205,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:text="Health Checks"
+                android:textColor="@color/black"
                 android:textAlignment="viewStart"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <View
                 android:layout_width="match_parent"
@@ -230,7 +235,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
+                        android:layout_marginTop="15dp"
                         android:text="English"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
@@ -238,7 +243,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
+                        android:layout_marginTop="20dp"
                         android:text="Spanish"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
@@ -248,7 +253,7 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="255dp">
+                    android:layout_marginStart="245dp">
 
                     <RadioButton
                         android:id="@+id/english"
@@ -261,6 +266,11 @@
                         android:layout_height="wrap_content"/>
                 </RadioGroup>
             </LinearLayout>
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
         </LinearLayout>
     </ScrollView>
 

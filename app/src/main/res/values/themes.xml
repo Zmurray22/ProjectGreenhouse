@@ -15,6 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/pale_green</item>
         <item name="android:fontFamily">@font/georgia_regular</item>
+
     </style>
 
     <style name="Theme.ProjectGreenhouse" parent="Theme.MaterialComponents.Light">
