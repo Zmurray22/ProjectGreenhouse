@@ -9,6 +9,7 @@ import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.Html;
@@ -18,6 +19,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,13 +30,17 @@ public class PlantProfileActivity extends AppCompatActivity {
 
     //gesture variable
     private GestureDetectorCompat mDetector;
-    final int REQUEST_IMAGE_CAPTURE = 100;
-    final int CAMERA_REQUEST = 1888;
+    private static final int IMAGE_CAPTURE_CODE = 1;
+    private ImageView profileImg;
+    private ImageButton btnPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_profile);
+
+        profileImg = findViewById(R.id.profileImage);
+        btnPic = findViewById(R.id.add_pic);
 
         //Get plant info----------------------
         Intent intent = getIntent();
@@ -43,13 +49,12 @@ public class PlantProfileActivity extends AppCompatActivity {
         nickname.setText(newNickname);
 
         //Take a picture-------------------------
-        ImageButton addPic = findViewById(R.id.add_pic);
-        addPic.setOnClickListener(new View.OnClickListener() {
+        btnPic.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     try {
-                        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                        startActivityForResult(takePictureIntent, IMAGE_CAPTURE_CODE);
 
                     } catch (ActivityNotFoundException e) {
                         Toast.makeText(PlantProfileActivity.this, "Camera Error", Toast.LENGTH_SHORT).show();
@@ -100,16 +105,15 @@ public class PlantProfileActivity extends AppCompatActivity {
         }
     }
 
-    //Recieve pic and pass to the AddPic activity
+    //Receive picture
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
-            assert data != null;
-            Bundle extras = data.getExtras();
-            Intent intent = new Intent(PlantProfileActivity.this, AddPicActivity.class);
-            intent.putExtra("preview_pic", extras);
-            startActivity(intent);
+        if(requestCode == IMAGE_CAPTURE_CODE && resultCode == RESULT_OK){
+            Bitmap bp = (Bitmap) data.getExtras().get("data");
+            profileImg.setImageBitmap(bp);
+        }else if (resultCode == RESULT_CANCELED){
+            Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
         }
     }
 }
