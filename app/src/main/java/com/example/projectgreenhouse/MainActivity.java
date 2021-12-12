@@ -8,10 +8,16 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.projectgreenhouse.inv.InventoryActivity;
 import com.example.projectgreenhouse.settings.SettingsActivity;
@@ -24,11 +30,17 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
+    ImageView swipeIconView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        swipeIconView = findViewById(R.id.swipe_icon);
+
+        Animation animator = AnimationUtils.loadAnimation(this, R.anim.slide);
+        swipeIconView.startAnimation(animator);
+
         //Drawer navigation
         drawerLayout = findViewById(R.id.drawer_layout_main);
         navigationView = findViewById(R.id.drawer_navigationView);
@@ -71,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
             }else if(item.getItemId() == R.id.nav_share){
                 //TODO: Functionality
+                Toast.makeText(MainActivity.this, "Share feature under construction", Toast.LENGTH_SHORT).show();
                 Log.i(getString(R.string.nav_log), getString(R.string.share));
                 drawerLayout.closeDrawer(GravityCompat.START);
 

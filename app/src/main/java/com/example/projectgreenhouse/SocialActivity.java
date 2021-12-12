@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.projectgreenhouse.inv.InventoryActivity;
 import com.example.projectgreenhouse.settings.SettingsActivity;
@@ -70,6 +71,7 @@ public class SocialActivity extends AppCompatActivity {
 
             }else if(item.getItemId() == R.id.nav_share){
                 //TODO: Functionality
+                Toast.makeText(SocialActivity.this, "Share feature under construction", Toast.LENGTH_SHORT).show();
                 Log.i(getString(R.string.nav_log), getString(R.string.share));
                 drawerLayout.closeDrawer(GravityCompat.START);
 
