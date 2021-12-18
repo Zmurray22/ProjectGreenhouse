@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Social platform for the plant community coming soon!"
+            android:text="@string/social_title"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"

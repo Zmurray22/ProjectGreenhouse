@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddPicActivity">
+    tools:context=".profile.AddPicActivity">
 
     <ImageView
         android:layout_width="400dp"
@@ -11,7 +11,8 @@
         android:id="@+id/temp_image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:scaleType="fitCenter"/>
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/add_pic_view" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,20 +24,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_save1"
-            android:text="Replace Profile Pic"/>
+            android:text="@string/btn_replace_profile_pic"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_save2"
             android:layout_marginTop="10dp"
-            android:text="Add to Gallery" />
+            android:text="@string/btn_add_to_gallery" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cancel_button"
             android:layout_marginTop="10dp"
-            android:text="Cancel"/>
+            android:text="@string/cancel"/>
     </LinearLayout>
 </RelativeLayout>

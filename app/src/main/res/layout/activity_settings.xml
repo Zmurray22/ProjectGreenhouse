@@ -23,26 +23,26 @@
                 style="@style/settings_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Account" />
+                android:text="@string/account" />
 
             <TextView
                 style="@style/account"
-                android:text="Email"
+                android:text="@string/email"
                  />
 
             <TextView
                 style="@style/account"
-                android:text="Password"
+                android:text="@string/password"
                  />
 
             <TextView
                 style="@style/account"
-                android:text="Backup"
+                android:text="@string/backup"
                  />
 
             <TextView
                 style="@style/account"
-                android:text="Privacy"
+                android:text="@string/privacy"
                  />
 
             <View
@@ -57,7 +57,7 @@
                 style="@style/settings_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Themes" />
+                android:text="@string/themes" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Blue"
+                        android:text="@string/blue"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
 
@@ -81,7 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="Classic"
+                        android:text="@string/classic"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
 
@@ -89,7 +89,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="Evergreen"
+                        android:text="@string/evergreen"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
 
@@ -97,7 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="Orange"
+                        android:text="@string/orange"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
 
@@ -105,7 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="Pink"
+                        android:text="@string/pink"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
                 </LinearLayout>
@@ -113,7 +113,8 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="225dp">
+                    android:layout_marginStart="225dp"
+                    android:id="@+id/radioGroup_theme">
 
                     <RadioButton
                         android:id="@+id/blue_option"
@@ -158,13 +159,13 @@
                 style="@style/settings_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Notifications" />
+                android:text="@string/notifications" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="40dp"
-                android:text="Updates"
+                android:text="@string/updates"
                 android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textSize="20sp" />
@@ -174,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
-                android:text="Weather Warning"
+                android:text="@string/weather_warning"
                 android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textSize="20sp" />
@@ -184,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
-                android:text="Watering Times"
+                android:text="@string/watering_times"
                 android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textSize="20sp" />
@@ -194,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
-                android:text="Reminders"
+                android:text="@string/reminders"
                 android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textSize="20sp" />
@@ -204,7 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
-                android:text="Health Checks"
+                android:text="@string/health_checks"
                 android:textColor="@color/black"
                 android:textAlignment="viewStart"
                 android:textSize="20sp" />
@@ -220,7 +221,7 @@
                 style="@style/settings_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Language" />
+                android:text="@string/language" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -236,7 +237,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:text="English"
+                        android:text="@string/english"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
 
@@ -244,7 +245,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Spanish"
+                        android:text="@string/spanish"
                         android:textSize="20sp"
                         android:textColor="@color/black"/>
 

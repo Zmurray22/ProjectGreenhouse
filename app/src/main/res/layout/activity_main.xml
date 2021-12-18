@@ -19,7 +19,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/title"
             android:id="@+id/swipe_icon"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/cd_swipe" />
 
 
         <!--Intro text-->
@@ -27,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/title"
-            android:text="Welcome to\nProject Greenhouse"
+            android:text="@string/welcome_message"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="40sp"

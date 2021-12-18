@@ -12,12 +12,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Classic_Green">
+        android:theme="@style/AppTheme.Classic_Green">
         <activity
-            android:name=".AddPicActivity"
+            android:name=".profile.AddPicActivity"
             android:exported="false" />
         <activity
-            android:name=".PlantProfileActivity"
+            android:name=".profile.PlantProfileActivity"
             android:exported="false" />
         <activity
             android:name=".inv.AddPlantActivity"

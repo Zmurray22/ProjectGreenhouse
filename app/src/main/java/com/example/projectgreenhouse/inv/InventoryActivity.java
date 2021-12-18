@@ -24,7 +24,7 @@ import com.example.projectgreenhouse.AboutActivity;
 import com.example.projectgreenhouse.IdActivity;
 import com.example.projectgreenhouse.MainActivity;
 import com.example.projectgreenhouse.MapsActivity;
-import com.example.projectgreenhouse.PlantProfileActivity;
+import com.example.projectgreenhouse.profile.PlantProfileActivity;
 import com.example.projectgreenhouse.R;
 import com.example.projectgreenhouse.settings.SettingsActivity;
 import com.example.projectgreenhouse.SocialActivity;

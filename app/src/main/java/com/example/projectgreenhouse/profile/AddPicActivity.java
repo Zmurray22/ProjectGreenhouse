@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.example.projectgreenhouse.R;
 
 public class AddPicActivity extends AppCompatActivity {
 
@@ -56,11 +57,11 @@ public class AddPicActivity extends AppCompatActivity {
 
     //Change profile picture
     public void changeProfilePic(){
-
+        //TODO
     }
 
     //Add picture to gallery
     public void addToGallery(){
-
+        //TODO
     }
 }

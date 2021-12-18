@@ -12,7 +12,8 @@
         android:layout_margin="10dp"
         android:textColor="@color/black"
         android:hint="@string/hint_word"
-        android:inputType="textAutoComplete" />
+        android:inputType="textAutoComplete"
+        android:autofillHints="Species or Nickname" />
 
     <Button
         android:id="@+id/button_save"

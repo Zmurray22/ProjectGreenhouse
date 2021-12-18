@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".PlantProfileActivity">
+    tools:context=".profile.PlantProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +20,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/test_plant" />
+            app:srcCompat="@drawable/test_plant"
+            android:contentDescription="@string/cd_profile_pic" />
 
         <LinearLayout
             android:layout_width="205dp"
@@ -36,7 +37,7 @@
                 android:id="@+id/nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nickname"
+                android:text="@string/nickname"
                 android:textColor="@color/black"
                 android:textSize="34sp" />
 
@@ -44,7 +45,7 @@
                 android:id="@+id/speciesName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Species-Name"
+                android:text="@string/species_name"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="italic" />
@@ -53,7 +54,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/add_pic"
-                android:src="@drawable/icon_camera"/>
+                android:src="@drawable/icon_camera"
+                android:contentDescription="@string/cd_camera_button" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -64,26 +66,31 @@
                 <ImageView
                     android:id="@+id/water_icon"
                     style="@style/listItem_icons"
-                    app:srcCompat="@drawable/icon_water"/>
+                    app:srcCompat="@drawable/icon_water"
+                    android:contentDescription="@string/cd_water_icon" />
 
                 <ImageView
                     android:id="@+id/heart_icon"
                     style="@style/listItem_icons"
-                    app:srcCompat="@drawable/icon_heart" />
+                    app:srcCompat="@drawable/icon_heart"
+                    android:contentDescription="@string/cd_heart_icon" />
 
                 <ImageView
                     android:id="@+id/freeze_icon"
                     style="@style/listItem_icons"
-                    app:srcCompat="@drawable/icon_freeze" />
+                    app:srcCompat="@drawable/icon_freeze"
+                    android:contentDescription="@string/cd_freeze_icon" />
 
                 <ImageView
                     android:id="@+id/storm_icon"
                     style="@style/listItem_icons"
-                    app:srcCompat="@drawable/icon_storm" />
+                    app:srcCompat="@drawable/icon_storm"
+                    android:contentDescription="@string/cd_storm_icon" />
                 <ImageView
                     android:id="@+id/toxic_icon2"
                     style="@style/listItem_icons"
-                    app:srcCompat="@drawable/icon_toxic" />
+                    app:srcCompat="@drawable/icon_toxic"
+                    android:contentDescription="@string/cd_toxic_icon" />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -102,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginStart="10dp"
-                android:text="Care"
+                android:text="@string/care"
                 android:textColor="@color/black"
                 android:textSize="34sp"/>
 
@@ -129,20 +136,20 @@
 
                     <TextView
                         style="@style/care"
-                        android:text="Light"
+                        android:text="@string/light"
                         android:layout_marginTop="12dp"/>
 
                     <TextView
                         style="@style/care"
-                        android:text="Water" />
+                        android:text="@string/water" />
 
                     <TextView
                         style="@style/care"
-                        android:text="Toxicity" />
+                        android:text="@string/toxicity" />
 
                     <TextView
                         style="@style/care"
-                        android:text="Hardiness Zone" />
+                        android:text="@string/hardiness_zone" />
 
 
                 </LinearLayout>
@@ -164,17 +171,17 @@
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Low"/>
+                            android:text="@string/low"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Medium"/>
+                            android:text="@string/medium"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="High"
+                            android:text="@string/high"
                             android:layout_marginStart="9dp"/>
 
                     </RadioGroup>
@@ -188,17 +195,17 @@
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Mist"/>
+                            android:text="@string/mist"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Moderate"/>
+                            android:text="@string/moderate"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Moist"/>
+                            android:text="@string/moist"/>
 
                     </RadioGroup>
 
@@ -211,18 +218,18 @@
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Low"/>
+                            android:text="@string/low"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pets"
+                            android:text="@string/pets"
                             android:layout_marginStart="2dp"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Humans"
+                            android:text="@string/humans"
                             android:layout_marginStart="33dp"/>
 
                     </RadioGroup>
@@ -230,7 +237,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Range"
+                        android:text="@string/range"
                         android:id="@+id/zone_temp"
                         android:textSize="20sp"
                         android:textAlignment="center"/>
@@ -265,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
-                    android:text="Notes"
+                    android:text="@string/notes"
                     android:textColor="@color/black"
                     android:textSize="34sp"/>
 
@@ -289,7 +296,9 @@
                 android:inputType="textMultiLine"
                 android:textAlignment="viewStart"
                 android:gravity="start|top"
-                android:text="" />
+                android:text=""
+                android:importantForAutofill="no"
+                android:hint="@string/add_a_note"/>
 
             <!--Wikipage-->
             <TextView

@@ -27,7 +27,8 @@
                 android:background="@color/teal_700"
                 android:layout_gravity="end"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_add" />
+                android:src="@drawable/icon_add"
+                android:contentDescription="@string/add_button"/>
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -37,7 +38,8 @@
                 android:ems="10"
                 android:textColor="@color/black"
                 android:inputType="textFilter"
-                android:text="Search..." />
+                android:hint="@string/filter"
+                android:autofillHints="name" />
         </com.google.android.material.navigation.NavigationView>
 <!--TODO: establish storage system for items-->
         <androidx.recyclerview.widget.RecyclerView

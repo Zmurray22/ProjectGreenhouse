@@ -3,7 +3,6 @@ package com.example.projectgreenhouse.db;
 import android.app.Application;
 import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
-import androidx.loader.content.AsyncTaskLoader;
 
 import java.util.List;
 

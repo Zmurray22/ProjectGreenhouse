@@ -4,24 +4,36 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.projectgreenhouse.MainActivity;
 import com.example.projectgreenhouse.R;
 
 public class SettingsActivity extends AppCompatActivity {
+    //Preferences
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
+    //Theme radio buttons
+    RadioGroup radioGroup_theme;
+    RadioButton checkedThemeRadio;
     //gesture variables
     private GestureDetectorCompat mDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
@@ -30,6 +42,40 @@ public class SettingsActivity extends AppCompatActivity {
 
         //swipe detector
         mDetector = new GestureDetectorCompat(this, new MyGestureListener());
+
+        //Theme changes
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = sharedPreferences.edit();
+        radioGroup_theme = findViewById(R.id.radioGroup_theme);
+        checkedThemeRadio = radioGroup_theme.findViewById(radioGroup_theme.getCheckedRadioButtonId());
+        radioGroup_theme.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                //find selected radio button
+                switch (checkedId){
+                    case R.id.blue_option:
+                        setTheme(R.style.AppTheme_Blue_Green);
+                        Toast.makeText(SettingsActivity.this, "Blue theme selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.classic_option:
+                        setTheme(R.style.AppTheme_Classic_Green);
+                        Toast.makeText(SettingsActivity.this, "Classic theme selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.evergreen_option:
+                        setTheme(R.style.AppTheme_Evergreen);
+                        Toast.makeText(SettingsActivity.this, "Evergreen theme selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.orange_option:
+                        setTheme(R.style.AppTheme_Orange_green);
+                        Toast.makeText(SettingsActivity.this, "Orange theme selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.pink_option:
+                        setTheme(R.style.AppTheme_Pink_Green);
+                        Toast.makeText(SettingsActivity.this, "Pink theme selected", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
 
     }
 
@@ -68,4 +114,5 @@ public class SettingsActivity extends AppCompatActivity {
             return false;
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.projectgreenhouse;
+package com.example.projectgreenhouse.profile;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +25,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projectgreenhouse.R;
 import com.example.projectgreenhouse.viewmodel.GreenhouseViewModel;
 
 public class PlantProfileActivity extends AppCompatActivity {
@@ -37,8 +38,6 @@ public class PlantProfileActivity extends AppCompatActivity {
     private SeekBar zoneSetting;
     private TextView tempZone;
     private Button noteSave;
-    private ImageButton btnDelete;
-    GreenhouseViewModel greenhouseViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,34 +80,34 @@ public class PlantProfileActivity extends AppCompatActivity {
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                         switch (progress){
                             case 0:
-                                tempZone.setText("Zone 1 (-60 to -50 °F)");
+                                tempZone.setText(R.string.hard_zone1);
                                 break;
                             case 1:
-                                tempZone.setText("Zone 2 (-50 to -40 °F)");
+                                tempZone.setText(R.string.hard_zone2);
                                 break;
                             case 2:
-                                tempZone.setText("Zone 3 (-40 to -30 °F)");
+                                tempZone.setText(R.string.hard_zone3);
                                 break;
                             case 3:
-                                tempZone.setText("Zone 4 (-30 to -20 °F)");
+                                tempZone.setText(R.string.hard_zone4);
                                 break;
                             case 4:
-                                tempZone.setText("Zone 5 (-20 to -10 °F)");
+                                tempZone.setText(R.string.hard_zone5);
                                 break;
                             case 5:
-                                tempZone.setText("Zone 6 (-10 to 0 °F)");
+                                tempZone.setText(R.string.hard_zone6);
                                 break;
                             case 6:
-                                tempZone.setText("Zone 7 (0 to 10 °F)");
+                                tempZone.setText(R.string.hard_zone7);
                                 break;
                             case 7:
-                                tempZone.setText("Zone 8 (10 to 20 °F)");
+                                tempZone.setText(R.string.hard_zone8);
                                 break;
                             case 8:
-                                tempZone.setText("Zone 9 (20 to 30 °F)");
+                                tempZone.setText(R.string.hard_zone9);
                                 break;
                             case 9:
-                                tempZone.setText("Zone 10 (30 to 40 °F)");
+                                tempZone.setText(R.string.hard_zone10);
                                 break;
                         }
                 }

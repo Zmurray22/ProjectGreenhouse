@@ -3,38 +3,38 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home"
+            android:title="@string/home"
             android:icon="@drawable/drawer_icon_home" />
 
         <item
             android:id="@+id/nav_inventory"
-            android:title="Inventory"
+            android:title="@string/inventory"
             android:icon="@drawable/drawer_icon_inventory" />
 
         <item
             android:id="@+id/nav_map"
-            android:title="Maps"
+            android:title="@string/maps"
             android:icon="@drawable/drawer_icon_map" />
 
         <item
             android:id="@+id/nav_id"
-            android:title="Identify"
+            android:title="@string/id"
             android:icon="@drawable/drawer_icon_id" />
 
     </group>
     <!--Submenu for social activities-->
     <group android:checkableBehavior="single">
-        <item android:title="Community">
+        <item android:title="@string/community">
             <menu>
                    <group>
                         <item
                             android:id="@+id/nav_social"
-                            android:title="Social"
+                            android:title="@string/social"
                             android:icon="@drawable/drawer_icon_social" />
 
                         <item
                             android:id="@+id/nav_share"
-                            android:title="Share"
+                            android:title="@string/share"
                             android:icon="@drawable/drawer_icon_share" />
 
                    </group>
@@ -44,23 +44,23 @@
 
     <!--Submenu for other-->
     <group android:checkableBehavior="single">
-        <item android:title="Other">
+        <item android:title="@string/other">
             <menu>
                 <group>
 
                     <item
                         android:id="@+id/nav_settings"
-                        android:title="Settings"
+                        android:title="@string/settings"
                         android:icon="@drawable/drawer_icon_settings" />
 
                     <item
                         android:id="@+id/nav_about"
-                        android:title="About"
+                        android:title="@string/about"
                         android:icon="@drawable/drawer_icon_about" />
 
                     <item
                         android:id="@+id/nav_exit"
-                        android:title="Exit"
+                        android:title="@string/exit"
                         android:icon="@drawable/drawer_icon_exit" />
 
                 </group>

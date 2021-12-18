@@ -17,13 +17,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background_bg2" />
+        app:srcCompat="@drawable/background_bg2"
+        android:contentDescription="@string/cd_profile_pic" />
 
     <TextView
         android:id="@+id/nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nickname"
+        android:text="@string/nickname"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:layout_gravity="top"
@@ -32,7 +33,7 @@
         android:id="@+id/speciesName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Species-Name"
+        android:text="@string/species_name"
         android:textColor="@color/black"
         android:textStyle="italic"
         android:textSize="24sp"
@@ -47,29 +48,34 @@
         <ImageView
             android:id="@+id/water_icon"
             style="@style/listItem_icons"
-            app:srcCompat="@drawable/icon_water"/>
+            app:srcCompat="@drawable/icon_water"
+            android:contentDescription="@string/cd_water_icon" />
 
         <ImageView
             android:id="@+id/heart_icon"
             style="@style/listItem_icons"
             android:layout_toEndOf="@id/water_icon"
-            app:srcCompat="@drawable/icon_heart" />
+            app:srcCompat="@drawable/icon_heart"
+            android:contentDescription="@string/cd_heart_icon" />
 
         <ImageView
             android:id="@+id/freeze_icon"
             style="@style/listItem_icons"
             android:layout_toEndOf="@id/heart_icon"
-            app:srcCompat="@drawable/icon_freeze" />
+            app:srcCompat="@drawable/icon_freeze"
+            android:contentDescription="@string/cd_freeze_icon" />
 
         <ImageView
             android:id="@+id/storm_icon"
             style="@style/listItem_icons"
             android:layout_toEndOf="@id/freeze_icon"
-            app:srcCompat="@drawable/icon_storm" />
+            app:srcCompat="@drawable/icon_storm"
+            android:contentDescription="@string/cd_storm_icon" />
         <ImageView
             android:id="@+id/toxic_icon2"
             style="@style/listItem_icons"
             android:layout_toEndOf="@id/storm_icon"
-            app:srcCompat="@drawable/icon_toxic" />
+            app:srcCompat="@drawable/icon_toxic"
+            android:contentDescription="@string/cd_toxic_icon" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
