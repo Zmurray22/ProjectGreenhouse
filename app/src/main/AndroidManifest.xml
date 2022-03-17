@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.Classic_Green">
+        android:theme="@style/Theme.ProjectGreenhouse">
         <activity
             android:name=".profile.AddPicActivity"
             android:exported="false" />

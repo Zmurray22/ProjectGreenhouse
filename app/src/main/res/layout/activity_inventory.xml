@@ -25,21 +25,43 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:background="@color/teal_700"
-                android:layout_gravity="end"
+                android:layout_gravity="start"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_add"
                 android:contentDescription="@string/add_button"/>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
+                android:layout_marginLeft="70dp"
                 android:ems="10"
                 android:textColor="@color/black"
                 android:inputType="textFilter"
                 android:hint="@string/filter"
+                android:textColorHint="@color/black"
                 android:autofillHints="name" />
+
+            <ImageButton
+                android:id="@+id/inv_filter_button"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="@android:color/holo_blue_dark"
+                android:contentDescription="@string/add_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_filter" />
+
+            <ImageButton
+                android:id="@+id/inv_search_button"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="@android:color/holo_blue_dark"
+                android:contentDescription="@string/add_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_filter" />
+
         </com.google.android.material.navigation.NavigationView>
 <!--TODO: establish storage system for items-->
         <androidx.recyclerview.widget.RecyclerView
