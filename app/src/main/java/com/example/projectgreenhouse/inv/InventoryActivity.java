@@ -31,6 +31,7 @@ import com.example.projectgreenhouse.SocialActivity;
 import com.example.projectgreenhouse.db.Plant;
 import com.example.projectgreenhouse.viewmodel.GreenhouseViewModel;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 import java.util.Objects;
@@ -127,6 +128,18 @@ public class InventoryActivity extends AppCompatActivity {
             }
         });
 
+        //Clear search button
+        ImageButton clearSearch = findViewById(R.id.search_clear_button);
+        clearSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextInputEditText searchField = findViewById(R.id.search_field);
+                searchField.setText("");
+            }
+        });
+
+        //TODO:Create menu dropdown for filter button
+
 
         //RecyclerView Block----------------------
         //Find recyclerView in the layout
@@ -189,10 +202,13 @@ public class InventoryActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
+            //Item added successfully
             Plant plant = new Plant(data.getStringExtra(AddPlantActivity.EXTRA_REPLY));
             greenhouseViewModel.insert(plant);
-        } else{
             Toast.makeText(getApplicationContext(), R.string.empty_not_saved, Toast.LENGTH_LONG).show();
+        } else{
+            //Item was not added
+            Toast.makeText(getApplicationContext(), R.string.item_added, Toast.LENGTH_LONG).show();
         }
     }
 }

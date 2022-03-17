@@ -25,11 +25,11 @@
     <string name="classic">Classic</string>
     <string name="community">Community</string>
     <string name="email">Email</string>
-    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="empty_not_saved">Item not saved because it is empty.</string>
     <string name="english">English</string>
     <string name="evergreen">Evergreen</string>
     <string name="exit">Exit</string>
-    <string name="filter">Filter</string>
+    <string name="filter_search">Search</string>
     <string name="hardiness_zone">Hardiness Zone</string>
     <string name="hard_zone1">Zone 1 (-60 to -50 °F)</string>
     <string name="hard_zone2">Zone 2 (-50 to -40 °F)</string>
@@ -48,6 +48,7 @@
     <string name="humans">Humans</string>
     <string name="id">Identify</string>
     <string name="id_activity_title">Plant Identification API\ncoming soon!</string>
+    <string name="item_added">Add item action canceled.</string>
     <string name="inventory">Inventory</string>
     <string name="language">Language</string>
     <string name="light">Light</string>

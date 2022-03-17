@@ -22,8 +22,9 @@ public class AddPlantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_plant);
         mEditNicknameView = findViewById(R.id.create_nickname);
 
-        final Button button = findViewById(R.id.button_save);
-        button.setOnClickListener(new View.OnClickListener(){
+        //Submit new item
+        final Button addButton = findViewById(R.id.add_button_save);
+        addButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent replyIntent = new Intent();
                 if(TextUtils.isEmpty(mEditNicknameView.getText())){
@@ -33,6 +34,17 @@ public class AddPlantActivity extends AppCompatActivity {
                     replyIntent.putExtra(EXTRA_REPLY, nickname);
                     setResult(RESULT_OK, replyIntent);
                 }
+                finish();
+            }
+        });
+
+        //Cancel activity
+        final Button cancelButton = findViewById(R.id.add_cancel);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent replyIntent = new Intent();
+                setResult(RESULT_CANCELED, replyIntent);
                 finish();
             }
         });
